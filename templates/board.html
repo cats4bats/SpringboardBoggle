@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOGGLE</title>
+</head>
+<body>
+    {% for array in board %}
+        {% for letter in array %}
+            <h1 style="display: inline-block; width: 5rem; height: 5rem; border: 2px solid red; text-align: center;">{{letter}}</h1>
+        {% endfor %}
+        <br>
+    {% endfor %}
+    <form action="#">
+        <label for="guess">Make a guess</label>
+        <input type="text" name="guess" id="guess">
+        <button id="btn">Guess!</button>
+    </form>
+    <h1 id="results"></h1>
+    <h1 id="score"></h1>
+</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+</html>
